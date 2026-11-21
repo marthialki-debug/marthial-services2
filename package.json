@@ -1,0 +1,10 @@
+{
+  "name": "marthials-services",
+  "version": "1.0.0",
+  "description": "MARTHIAL'S SERVICES & MARTHIAL SHOP – plateforme de vente d'abonnements et boutique",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "engines": { "node": ">=22.13" },
+  "license": "UNLICENSED",
+  "private": true
+}

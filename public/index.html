@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<meta name="theme-color" content="#05030a">
+<link rel="canonical" href="{{URL}}/">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:image" content="{{URL}}/assets/logo.png">
+<meta property="og:locale" content="fr_BF">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MARTHIAL'S SERVICES","url":"{{URL}}/","logo":"{{URL}}/assets/logo.png","areaServed":"BF"}</script>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="splash" aria-hidden="true"><img src="/assets/logo.png" alt=""><div class="bar"><i></i></div></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="floaters" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+
+<div id="promo" class="promo" hidden></div>
+<header id="top" class="hdr">
+  <a class="brand" href="#accueil" aria-label="MARTHIAL'S SERVICES – Accueil">
+    <img src="/assets/logo-emblem.png" alt="Logo MARTHIAL'S SERVICES" width="52" height="52">
+    <span><b>MARTHIAL'S</b><em>SERVICES</em></span>
+  </a>
+  <nav id="nav" aria-label="Navigation principale">
+    <a href="#services">Services</a><a href="#shop">Marthial Shop</a><a href="#avantages">Avantages</a><a href="#comment">Comment commander</a><a href="#faq">FAQ</a>
+  </nav>
+  <div class="hdr-actions">
+    <button class="icon-btn" id="btnTrack" title="Suivre ma commande" aria-label="Suivre ma commande">🔎</button>
+    <button class="icon-btn" id="btnAccount" title="Espace client" aria-label="Espace client">👤</button>
+    <button class="icon-btn cart-btn" id="btnCart" aria-label="Ouvrir le panier">🛒<span id="cartCount" class="count" hidden>0</span></button>
+    <a class="btn btn-gold sm hide-m" href="#services">Commander</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="accueil">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">✦ Vos abonnements • Vos services • Votre satisfaction</p>
+        <h1 id="heroTitle">Tous vos abonnements premium, au même endroit.</h1>
+        <p class="lead" id="heroText"></p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="#services">Commander</a>
+          <a class="btn btn-ghost" href="#services" id="discover">Découvrir nos services</a>
+        </div>
+        <ul class="trust"><li>📱 Mobile Money</li><li>🧾 Reçu officiel</li><li>💬 Support WhatsApp</li></ul>
+      </div>
+      <div class="hero-logo reveal"><img src="/assets/logo.png" alt="MARTHIAL'S SERVICES – Vos abonnements, vos services, votre satisfaction" width="520" height="540" fetchpriority="high"></div>
+    </div>
+  </section>
+
+  <section id="a-propos" class="sec">
+    <div class="wrap narrow center reveal"><h2 id="aboutTitle"></h2><p class="lead" id="aboutText"></p></div>
+  </section>
+
+  <section id="services" class="sec">
+    <div class="wrap">
+      <header class="sec-head reveal"><p class="eyebrow">Nos prestations</p><h2>Choisissez votre service</h2><p class="muted">Streaming, applis, cloud et plus. Prix en F CFA, affichés avant de valider.</p></header>
+      <div class="toolbar reveal"><div id="svcTabs" class="chips" role="tablist"></div><input id="svcSearch" type="search" placeholder="Rechercher un service…" aria-label="Rechercher un service"></div>
+      <div id="svcGrid" class="grid"></div>
+    </div>
+  </section>
+
+  <section id="shop" class="sec shop">
+    <div class="wrap">
+      <header class="sec-head reveal"><p class="eyebrow gold">Boutique</p><h2>MARTHIAL <span class="gold">SHOP</span></h2><p class="muted" id="shopText"></p></header>
+      <div class="toolbar reveal">
+        <div id="shopTabs" class="chips"></div>
+        <div class="tools"><input id="shopSearch" type="search" placeholder="Rechercher un produit…" aria-label="Rechercher un produit">
+          <select id="shopSort" aria-label="Trier"><option value="">Trier</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option><option value="name">Nom A–Z</option></select>
+          <label class="check"><input type="checkbox" id="shopStock"> En stock</label></div>
+      </div>
+      <div id="shopGrid" class="grid"></div>
+    </div>
+  </section>
+
+  <section id="avantages" class="sec"><div class="wrap">
+    <header class="sec-head reveal"><p class="eyebrow">Pourquoi nous</p><h2>Nos avantages</h2></header>
+    <div id="advGrid" class="adv"></div></div></section>
+
+  <section id="comment" class="sec"><div class="wrap">
+    <header class="sec-head reveal"><p class="eyebrow">Simple et rapide</p><h2>Comment commander</h2></header>
+    <ol class="steps">
+      <li class="reveal"><b>1</b><h3>Choisissez</h3><p>Sélectionnez une prestation ou un produit et son option.</p></li>
+      <li class="reveal"><b>2</b><h3>Ajoutez au panier</h3><p>Modifiez les quantités et vérifiez le total.</p></li>
+      <li class="reveal"><b>3</b><h3>Renseignez vos coordonnées</h3><p>Nom et téléphone suffisent, sans compte obligatoire.</p></li>
+      <li class="reveal"><b>4</b><h3>Payez</h3><p>Mobile Money : envoyez le montant puis saisissez la référence.</p></li>
+      <li class="reveal"><b>5</b><h3>Recevez votre accès</h3><p>Après vérification du paiement, vous suivez votre commande et téléchargez votre reçu.</p></li>
+    </ol></div></section>
+
+  <section id="faq" class="sec"><div class="wrap narrow">
+    <header class="sec-head reveal"><p class="eyebrow">Questions fréquentes</p><h2>FAQ</h2></header>
+    <div id="faqList" class="faq"></div></div></section>
+</main>
+
+<footer class="foot"><div class="wrap foot-grid">
+  <div><img src="/assets/logo-emblem.png" alt="" width="64" height="64"><p class="muted" id="footTag"></p></div>
+  <div><h4>Navigation</h4><a href="#services">Services</a><a href="#shop">Marthial Shop</a><a href="#comment">Comment commander</a><a href="#faq">FAQ</a></div>
+  <div><h4>Contact</h4><div id="footContact"></div></div>
+  <div><h4>Mon espace</h4><a href="#" id="fTrack">Suivre ma commande</a><a href="#" id="fAccount">Espace client</a></div>
+</div><p class="copy">© <span id="year"></span> MARTHIAL'S SERVICES — Tous droits réservés.</p></footer>
+
+<a id="wa" class="wa" href="#" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp"><span aria-hidden="true">💬</span><b>WhatsApp</b></a>
+
+<aside id="drawer" class="drawer" aria-hidden="true" aria-label="Panier"><div class="drawer-bg" data-close></div><div class="drawer-panel" id="drawerPanel"></div></aside>
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="modal-bg" data-close></div><div class="modal-box" id="modalBox"></div></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<script src="/js/app.js" defer></script>
+</body>
+</html>
